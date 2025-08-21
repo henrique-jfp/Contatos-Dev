@@ -146,61 +146,6 @@
       line-height: 1.8;
     }
 
-    /* Serviços */
-    .services-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin-top: 3rem;
-    }
-
-    .service-card {
-      background: var(--card-background);
-      padding: 2.5rem 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px var(--shadow-light);
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(26, 77, 58, 0.05);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 48px var(--shadow-medium);
-    }
-
-    .service-card i {
-      font-size: 3rem;
-      color: var(--primary-color);
-      margin-bottom: 1.5rem;
-      display: block;
-    }
-
-    .service-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-
-    .service-card p {
-      color: var(--text-dark);
-      opacity: 0.8;
-      line-height: 1.6;
-    }
-
     /* Projetos */
     .projects-grid {
       display: grid;
@@ -353,54 +298,32 @@ Adoro criar soluções digitais eficientes e modernas, de bots a sites interativ
 Sempre buscando aprender algo novo e transformar ideias em projetos reais que as pessoas possam usar. </p>
     </section>
 
-    <section class="services">
-      <h2>O que eu faço</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <i class="fas fa-code"></i>
-          <h3>Desenvolvimento Web</h3>
-          <p>Criação de aplicações web modernas e performáticas utilizando as mais recentes tecnologias e frameworks.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-mobile-alt"></i>
-          <h3>Sites Responsivos</h3>
-          <p>Desenvolvimento de interfaces que se adaptam perfeitamente a qualquer dispositivo, garantindo a melhor experiência do usuário.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-search"></i>
-          <h3>SEO & Performance</h3>
-          <p>Otimização para motores de busca e melhoria de performance para maior visibilidade e velocidade de carregamento.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="projects">
-      <h2>Projetos</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="https://via.placeholder.com/400x200/1a4d3a/ffffff?text=Projeto+1" alt="Projeto 1">
-          <div class="info">
-            <h3>Projeto em Destaque</h3>
-            <p>Descrição do projeto desenvolvido, tecnologias utilizadas e principais funcionalidades implementadas.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://via.placeholder.com/400x200/2d6a4f/ffffff?text=Projeto+2" alt="Projeto 2">
-          <div class="info">
-            <h3>Aplicação Web</h3>
-            <p>Sistema web completo com funcionalidades avançadas e interface moderna e intuitiva.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://via.placeholder.com/400x200/40916c/ffffff?text=Projeto+3" alt="Projeto 3">
-          <div class="info">
-            <h3>Site Responsivo</h3>
-            <p>Landing page otimizada para conversão com design responsivo e performance excepcional.</p>
-          </div>
-        </div>
+  <h2>Projetos</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/henrique-jfp/MaestroFin/main/public/favicon.ico" alt="MaestroFin">
+      <div class="info">
+        <h3>MaestroFin</h3>
+        <p>Uma aplicação intuitiva para gerenciamento financeiro pessoal. Permite o controle de despesas, receitas e investimentos, ajudando usuários a organizar suas finanças de forma simples e eficaz.</p>
       </div>
-    </section>
+    </div>
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/henrique-jfp/RioCopacabanaTurismo/main/Public/Assets/favicon.ico" alt="Rio Copacabana Turismo">
+      <div class="info">
+        <h3>Rio Copacabana Turismo</h3>
+        <p>Site desenvolvido para a agência de turismo Rio Copacabana Turismo, com foco em um design de luxo e ótima experiência do usuário para fortalecer a presença digital da marca.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/henrique-jfp/cariocando-/main/public/favicon.ico" alt="Cariocando">
+      <div class="info">
+        <h3>Cariocando</h3>
+        <p>Um blog sobre o estilo de vida e a cultura do Rio de Janeiro. Criado para ser uma plataforma de conteúdo atrativa, com dicas de lazer, gastronomia e eventos pela cidade.</p>
+      </div>
+    </div>
   </div>
+</section>
 
   <section class="contact">
     <div class="container">
@@ -436,6 +359,7 @@ Sempre buscando aprender algo novo e transformar ideias em projetos reais que as
   </script>
 </body>
 </html>
+
 
 
 
