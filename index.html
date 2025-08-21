@@ -21,7 +21,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden;
+            overflow: hidden; /* Alterado de overflow-x para overflow total */
             position: relative;
         }
 
@@ -31,22 +31,47 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Partículas */
-        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-        .particle {
-            position: absolute;
-            width: 2px; height: 2px;
-            background: #00ff88;
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            opacity: 0.6;
-        }
-        @keyframes float {
-            0%,100% { transform: translateY(0) rotate(0); opacity: .6; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        /* --- INÍCIO DA MODIFICAÇÃO: EFEITO MATRIX --- */
+
+        /* Container do efeito */
+        .matrix-background { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            pointer-events: none; 
+            z-index: 1; 
         }
 
-        /* Card */
+        /* Estilo das tags caindo */
+        .code-tag {
+            position: absolute;
+            font-family: 'Courier New', Courier, monospace; /* Fonte de código */
+            color: #00ff88;
+            opacity: 0;
+            user-select: none; /* Impede que o texto seja selecionado */
+            animation: matrixFall 10s linear infinite;
+        }
+
+        /* Animação de queda */
+        @keyframes matrixFall {
+            0% {
+                transform: translateY(-20vh); /* Começa um pouco acima da tela */
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(120vh); /* Termina bem abaixo da tela */
+                opacity: 0;
+            }
+        }
+        
+        /* --- FIM DA MODIFICAÇÃO --- */
+
+        /* Card (aumentei o z-index para garantir que fique na frente) */
         .contact-card {
             background: rgba(20, 20, 20, 0.95);
             backdrop-filter: blur(20px);
@@ -58,7 +83,9 @@
             text-align: center;
             border: 1px solid rgba(0, 255, 136, 0.2);
             animation: cardEntry 1.2s ease;
-            position: relative; z-index: 10; overflow: hidden;
+            position: relative; 
+            z-index: 10; /* Garante que o card fique sobre o efeito */
+            overflow: hidden;
         }
 
         .contact-card::before {
@@ -150,7 +177,9 @@
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
+    <!-- Alterei o nome do container para ser mais descritivo -->
+    <div class="matrix-background" id="matrix-background"></div>
+
     <div class="contact-card">
         <div class="avatar-container">
             <div class="avatar-glow"></div>
@@ -169,22 +198,52 @@
     </div>
 
     <script>
-        // partículas
-        function createParticles() {
-            const particles = document.getElementById('particles');
-            for (let i=0;i<50;i++){
-                const p=document.createElement('div');
-                p.className='particle';
-                p.style.left=Math.random()*100+'%';
-                p.style.top=Math.random()*100+'%';
-                p.style.animationDelay=Math.random()*6+'s';
-                p.style.animationDuration=(Math.random()*4+4)+'s';
-                const size=Math.random()*3+1;
-                p.style.width=size+'px'; p.style.height=size+'px';
-                particles.appendChild(p);
+        // --- INÍCIO DA MODIFICAÇÃO: SCRIPT DO EFEITO MATRIX ---
+        function createMatrixRain() {
+            const container = document.getElementById('matrix-background');
+            if (!container) return;
+
+            // Lista de tags e símbolos de código famosos
+            const codeTags = [
+                '<div>', '</div>', '<span>', '</span>', '<h1>', '</h1>', '<p>', '</p>', 
+                '<a>', '</a>', '<img>', '<ul>', '</ul>', '<li>', '</li>', '<script>', 
+                'const', 'let', 'var', 'function', '() =>', '{', '}', '[', ']', ';',
+                'async', 'await', 'import', 'export', 'class', 'extends', '...',
+                '#id', '.class', ':', '::', 'px', 'rem', 'em', 'vh', 'vw', '%'
+            ];
+
+            const numberOfTags = 70; // Aumente ou diminua para mais ou menos densidade
+
+            for (let i = 0; i < numberOfTags; i++) {
+                const tag = document.createElement('span');
+                tag.className = 'code-tag';
+                
+                // Escolhe uma tag aleatória da lista
+                tag.innerText = codeTags[Math.floor(Math.random() * codeTags.length)];
+                
+                // Posição horizontal aleatória
+                tag.style.left = Math.random() * 100 + 'vw';
+                
+                // Tamanho da fonte aleatório para dar profundidade
+                tag.style.fontSize = (Math.random() * 12 + 8) + 'px'; // entre 8px e 20px
+                
+                // Duração da animação aleatória para velocidades diferentes
+                const duration = Math.random() * 8 + 7; // entre 7s e 15s
+                tag.style.animationDuration = duration + 's';
+                
+                // Atraso aleatório para que não comecem todas ao mesmo tempo
+                const delay = Math.random() * 10;
+                tag.style.animationDelay = delay + 's';
+
+                // Opacidade aleatória para um efeito mais sutil
+                tag.style.opacity = Math.random() * 0.5 + 0.2; // entre 0.2 e 0.7
+
+                container.appendChild(tag); 
             }
         }
-        createParticles();
+
+        createMatrixRain();
+        // --- FIM DA MODIFICAÇÃO ---
     </script>
 </body>
 </html>
