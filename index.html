@@ -190,9 +190,55 @@
       color: var(--text-dark);
       opacity: 0.8;
       line-height: 1.6;
+      min-height: 90px;
     }
 
-    /* Contato */
+    .project-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      flex: 1;
+      min-width: 120px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .project-links a.code-link {
+      background-color: var(--card-background);
+      color: var(--primary-color);
+      border: 1px solid var(--accent-color);
+    }
+
+    .project-links a.code-link:hover {
+      background-color: var(--accent-color);
+      color: var(--text-primary);
+      border-color: var(--accent-color);
+    }
+
+    .project-links a.live-link {
+      background-color: var(--primary-color);
+      color: var(--text-primary);
+      border: 1px solid var(--primary-color);
+    }
+
+    .project-links a.live-link:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
     .contact {
       background: linear-gradient(135deg, var(--primary-color) 0%, var(--background-dark) 100%);
       color: var(--text-primary);
@@ -302,24 +348,36 @@ Sempre buscando aprender algo novo e transformar ideias em projetos reais que as
   <h2>Projetos</h2>
   <div class="projects-grid">
     <div class="project-card">
-      <img src="https://i.imgur.com/swtrzDu.png" alt="MaestroFin" link="https://github.com/henrique-jfp/MaestroFin.git">
+      <img src="https://i.imgur.com/swtrzDu.png" alt="MaestroFin">
       <div class="info">
         <h3>MaestroFin</h3>
         <p>Uma aplicação intuitiva para gerenciamento financeiro pessoal. Permite o controle de despesas, receitas e investimentos, ajudando usuários a organizar suas finanças de forma simples e eficaz.</p>
+        <div class="project-links">
+          <a href="https://github.com/henrique-jfp/MaestroFin.git" target="_blank" class="code-link"><i class="fab fa-github"></i> Ver Código</a>
+          <a href="#" target="_blank" class="live-link"><i class="fas fa-external-link-alt"></i> Ver Projeto</a>
+        </div>
       </div>
     </div>
     <div class="project-card">
-      <img src="https://i.imgur.com/MCdYla9.png" alt="Rio Copacabana Turismo" link="https://github.com/henrique-jfp/RioCopacabanaTurismo.git">
+      <img src="https://i.imgur.com/MCdYla9.png" alt="Rio Copacabana Turismo">
       <div class="info">
         <h3>Rio Copacabana Turismo</h3>
         <p>Site desenvolvido para a agência de turismo Rio Copacabana Turismo, com foco em um design de luxo e ótima experiência do usuário para fortalecer a presença digital da marca.</p>
+        <div class="project-links">
+          <a href="https://github.com/henrique-jfp/RioCopacabanaTurismo.git" target="_blank" class="code-link"><i class="fab fa-github"></i> Ver Código</a>
+          <a href="#" target="_blank" class="live-link"><i class="fas fa-external-link-alt"></i> Ver Projeto</a>
+        </div>
       </div>
     </div>
     <div class="project-card">
-      <img src="https://raw.githubusercontent.com/henrique-jfp/cariocando-/main/public/favicon.ico" alt="Cariocando" link="https://github.com/henrique-jfp/cariocando-.git">
+      <img src="https://raw.githubusercontent.com/henrique-jfp/cariocando-/main/public/favicon.ico" alt="Cariocando">
       <div class="info">
         <h3>Cariocando</h3>
         <p>Um blog sobre o estilo de vida e a cultura do Rio de Janeiro. Criado para ser uma plataforma de conteúdo atrativa, com dicas de lazer, gastronomia e eventos pela cidade.</p>
+        <div class="project-links">
+          <a href="https://github.com/henrique-jfp/cariocando-.git" target="_blank" class="code-link"><i class="fab fa-github"></i> Ver Código</a>
+          <a href="#" target="_blank" class="live-link"><i class="fas fa-external-link-alt"></i> Ver Projeto</a>
+        </div>
       </div>
     </div>
   </div>
@@ -359,7 +417,3 @@ Sempre buscando aprender algo novo e transformar ideias em projetos reais que as
   </script>
 </body>
 </html>
-
-
-
-
